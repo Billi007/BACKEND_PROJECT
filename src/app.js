@@ -19,7 +19,12 @@ app.use(express.urlencoded({
 }))
 
 app.use(express.static("Public"))
-
 app.use(cookieParser())
+
+//routes import
+import router from './routes/user.routes.js'
+
+//route declaration                         for declaring routes we have to use MIDDLEWARE which is {app.use()}
+app.use('/api/v1/users', router)
 
 export default app
